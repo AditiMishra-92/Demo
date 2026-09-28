@@ -150,14 +150,14 @@ alertness, medicines) joined into one table with one row per patient.
 
 
 # =====================================================================
-# PAGE: DATA PREPARATION (short)
+# PAGE: DATA PREPARATION
 # =====================================================================
 elif page == "Data Preparation":
     st.title("Data Preparation")
 
     left, right = st.columns(2)
     with left:
-        st.subheader("Cleaning, in short")
+        st.subheader("Cleaning")
         st.markdown("""
 - **Removed impossible values:** a fake patient, 0 kg weight, 0 pulse, BMI of 404.
 - **Fixed wrong units:** troponin, hematocrit and heart-scan values were in the wrong unit.
@@ -173,7 +173,7 @@ elif page == "Data Preparation":
             "After": ["84% (as expected)", "39", "1"]})
         st.dataframe(ba, hide_index=True, width="stretch")
 
-    st.subheader("Feature engineering: new columns we added, and why")
+    st.subheader("Feature engineering")
     st.markdown("""
 - **Groups instead of raw numbers** (BMI group, blood pressure group, kidney stage, anemia level):
   easier to compare and explain, e.g. "death rate in kidney stage G5".
@@ -490,7 +490,7 @@ elif page == "Key Takeaways":
     st.success("With tests the hospital already does on day 1, it can spot the patients most likely to die or come back, "
                "and give them the right level of care early. This can save lives, free up ICU beds and reduce returns.")
 
-    with st.expander("How we built this (for questions)"):
+    with st.expander("How we built this"):
         st.markdown("""
 - **Tools:** Python, pandas, scikit-learn and Streamlit, so our notebook code runs directly in the dashboard.
 - **Idea:** we asked "who would open this and what would they decide?", so we built a risk check, not just charts.
